@@ -32,13 +32,9 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function sendName() {
-    stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
-}
-
 function showGreeting(message) {
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
-    //window.open(message, "_blank");
+    window.open(message, "_blank");
 }
 
 $(function () {
@@ -46,6 +42,5 @@ $(function () {
         e.preventDefault();
     });
     $( "#connect" ).click(function() { connect(); });
-    $( "#disconnect" ).click(function() { disconnect(); });
-    $( "#send" ).click(function() { sendName(); });
+    $( "#disconnect" ).click(function() { disconnect(); });$
 });
